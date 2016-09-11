@@ -10,7 +10,7 @@ WORKDIR /build
 RUN DESTDIR=/usr/local && \
     BUILDRUMP_EXTRA="-F ACFLAGS=-march=armv7-a" && \
     CC="/usr/bin/arm-linux-gnueabihf-gcc" && \
-    git clone https://github.com/WeaSeLworks/rumprun.git && \
+    git clone https://github.com/WeaSeLworks/rumprun.git -b RPi-support-from-dave-tucker --single-branch&& \
     cd /build/rumprun && \
     git submodule init && git submodule update && \
     sudo apt-get install -y curl && \
